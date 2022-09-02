@@ -10,7 +10,7 @@ public class TrelloDto {
 
     @JsonProperty("board")
     private int board;
-    
+
     @JsonProperty("cart")
     private int cart;
 }
