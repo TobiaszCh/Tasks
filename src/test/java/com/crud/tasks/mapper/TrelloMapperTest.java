@@ -1,12 +1,9 @@
 package com.crud.tasks.mapper;
 
 import com.crud.tasks.domain.*;
-import com.crud.tasks.mapper.TrelloMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +12,6 @@ public class TrelloMapperTest {
 
     @Autowired
     private TrelloMapper trelloMapper;
-
     private final TrelloListDto trelloListDto = new TrelloListDto("1", "Wiesiu", true);
     private final TrelloListDto trelloListDto1 = new TrelloListDto("2", "Robert", false);
     private final TrelloList trelloList = new TrelloList("1", "Wiesiu", true);
@@ -33,7 +29,6 @@ public class TrelloMapperTest {
         assertNotNull(result);
         assertEquals(1, result.size());
         assertEquals(2,result.get(0).getLists().size());
-
     }
 
     @Test
@@ -76,7 +71,6 @@ public class TrelloMapperTest {
     void mapToCardDto() {
         //Given
         TrelloCard trelloCard = new TrelloCard("Tomek", "Test", "test", "1");
-//        TrelloCard trelloCard1 = new TrelloCard("Karol", "Test1", "test1", "2");
         //When
         TrelloCardDto mapToCardDto = trelloMapper.mapToCardDto(trelloCard);
         //Then

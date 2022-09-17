@@ -1,5 +1,4 @@
 package com.crud.tasks.service;
-
 import com.crud.tasks.domain.Mail;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
