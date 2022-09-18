@@ -43,8 +43,7 @@ class TaskControllerTest {
         //Given
         when(taskMapper.mapToTaskDtoList(any())).thenReturn(List.of());
 
-        mockMvc
-                .perform(MockMvcRequestBuilders
+        mockMvc.perform(MockMvcRequestBuilders
                         .get("/v1/tasks")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk()) // or isOk()
@@ -59,8 +58,7 @@ class TaskControllerTest {
         when(service.getTask(1L)).thenReturn(task);
         when(taskMapper.mapToTaskDto(task)).thenReturn(taskDto);
         ////When & Then
-        mockMvc
-                .perform(MockMvcRequestBuilders
+        mockMvc.perform(MockMvcRequestBuilders
                         .get("/v1/tasks/1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(1)))
@@ -89,8 +87,8 @@ class TaskControllerTest {
 /*                .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(1)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title", Matchers.is("Task")))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.content", Matchers.is("Chceck Test")));
-*/
 
+*/
     }
 
     @Test
